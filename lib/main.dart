@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 
-
 void main() {
   runApp(const LMSApp());
 }
@@ -11,6 +10,7 @@ class LMSApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'LMS App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -149,7 +149,14 @@ class RegisterPage extends StatelessWidget {
 }
 
 class CourseList extends StatelessWidget {
-  final List<String> courses = ['Mathematics', 'Science', 'English', 'History', 'Art', 'Music'];
+  final List<String> courses = [
+    'Mathematics',
+    'Science',
+    'English',
+    'History',
+    'Art',
+    'Music'
+  ];
   CourseList({Key? key}) : super(key: key);
 
   @override
@@ -168,7 +175,8 @@ class CourseList extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CourseDetails(courseName: courses[index]),
+                  builder: (context) =>
+                      CourseDetails(courseName: courses[index]),
                 ),
               );
             },
@@ -178,7 +186,6 @@ class CourseList extends StatelessWidget {
     );
   }
 }
-
 
 class CourseDetails extends StatelessWidget {
   final String courseName;
@@ -216,12 +223,12 @@ class CourseDetails extends StatelessWidget {
             SizedBox(height: 8.0),
             Text(
               'This is the description for the $courseName course. '
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                  'Suspendisse malesuada mauris ut orci posuere, nec euismod nisi volutpat. '
-                  'Nam id consectetur orci. Donec vel facilisis odio. Nam eget leo nec dolor dictum sodales nec eu justo. '
-                  'Sed eu velit eros. Aliquam non nunc non sapien feugiat posuere in sed nisi. '
-                  'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. '
-                  'Nunc varius justo leo, vitae vestibulum ipsum pellentesque at.',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+              'Suspendisse malesuada mauris ut orci posuere, nec euismod nisi volutpat. '
+              'Nam id consectetur orci. Donec vel facilisis odio. Nam eget leo nec dolor dictum sodales nec eu justo. '
+              'Sed eu velit eros. Aliquam non nunc non sapien feugiat posuere in sed nisi. '
+              'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. '
+              'Nunc varius justo leo, vitae vestibulum ipsum pellentesque at.',
               style: TextStyle(
                 fontSize: 16.0,
               ),
@@ -256,5 +263,3 @@ class CourseDetails extends StatelessWidget {
     );
   }
 }
-
-
