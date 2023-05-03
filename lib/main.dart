@@ -155,9 +155,7 @@ class CourseList extends StatelessWidget {
     'Mathematics',
     'Science',
     'English',
-    'History',
-    'Art',
-    'Music'
+    'Filipino',
   ];
   CourseList({Key? key}) : super(key: key);
 
