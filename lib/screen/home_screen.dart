@@ -16,8 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Courses(),
+
     Text(
-      'Index 2: My learning',
+      'List of my course',
       style: optionStyle,
     ),
     LoginPage(),

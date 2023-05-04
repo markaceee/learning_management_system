@@ -9,7 +9,7 @@ class DescriptionPage extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Lorem ipsum dolor sit amet, lorem suspendisse amet suscipit, vel adipiscing excepturi proin magni, rutrum quam rhoncus eget tincidunt euismod amet. Consequat lacus nam leo amet id fringilla, lectus in.",
+            "Learning is the process of acquiring new knowledge, skills, behaviors, values, or preferences through experience, study, or instruction. It is a lifelong journey that empowers individuals to adapt and thrive in a constantly changing world. Learning can take many forms, including formal education, informal training, self-directed study, and practical application.",
             style: TextStyle(
               fontSize: 16,
               color: Colors.black.withOpacity(0.6),
