@@ -35,7 +35,7 @@ class _CourseScreenState extends State<CourseScreen> {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black87,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.deepPurpleAccent,
         elevation: 0,
         centerTitle: true,
         title: Text(
@@ -46,7 +46,7 @@ class _CourseScreenState extends State<CourseScreen> {
           ),
         ),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.deepPurple,
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: ListView(

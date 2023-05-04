@@ -12,18 +12,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle =
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Courses(),
-
     Text(
       'List of my course',
       style: optionStyle,
     ),
     LoginPage(),
   ];
-
 
   void _onItemTapped(int index) {
     setState(() {
@@ -34,9 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         iconSize: 25,
@@ -45,12 +41,27 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.assignment), label: 'Courses'),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Course list'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.assignment), label: 'Courses'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.book), label: 'Course list'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+      ),
+      body: Stack(
+        children: [
+          Image.asset(
+            "assets/images/background.png", // Replace with your image asset path
+            fit: BoxFit.fill,
+            height: double.infinity,
+            width: double.infinity,
+          ),
+          Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
+        ],
       ),
     );
   }
