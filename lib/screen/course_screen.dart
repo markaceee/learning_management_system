@@ -48,7 +48,8 @@ class _CourseScreenState extends State<CourseScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+
             child: ListView(
               children: [
                 Container(
@@ -122,8 +123,6 @@ class _CourseScreenState extends State<CourseScreen> {
                           });
                         },
                         child: Container(
-
-
                           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
                           child: Text(
                             "Description",
@@ -180,7 +179,6 @@ class _CourseScreenState extends State<CourseScreen> {
         );
       },
     );
-
   }
 
   Widget DescriptionSection(){
@@ -190,7 +188,8 @@ class _CourseScreenState extends State<CourseScreen> {
           "Learning is the process of acquiring new knowledge, skills, behaviors, values, or preferences through experience, study, or instruction. It is a lifelong journey that empowers individuals to adapt and thrive in a constantly changing world. Learning can take many forms, including formal education, informal training, self-directed study, and practical application.",
           style: TextStyle(
             fontSize: 16,
-            color: Colors.black.withOpacity(0.6),
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
           ),
           textAlign: TextAlign.justify,
         ),

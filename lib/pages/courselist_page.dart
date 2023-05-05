@@ -18,8 +18,8 @@ class CourseListPage extends StatelessWidget {
             ),
             // Add the rest of the content here
             Container(
-              margin: EdgeInsets.all(75),
-              padding: EdgeInsets.all(75),
+              margin: EdgeInsets.all(50),
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:learning_management_system/pages/signupPage.dart';
+import 'package:learning_management_system/pages/login_page.dart';
 import 'package:learning_management_system/screen/home_screen.dart';
 
 import '../screen/welcome_screen.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignupPage extends StatelessWidget {
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Login",
+                "Signup",
                 style: TextStyle(
                     fontSize: 30,
                     fontFamily: 'Poppins',
@@ -30,6 +30,47 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Your Name",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 5, bottom: 5),
+                width: MediaQuery.of(context).size.width,
+                height: 45,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
+                      hintText: "Your name",
+                      hintStyle: TextStyle(
+                          color: Colors.black.withOpacity(0.5)
+                      ),
+                      prefixIcon: Icon(
+                        Icons.person,
+                        size: 25,
+                      )
+                  ),
+
+                ),
+              ),              SizedBox(height: 20),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -114,39 +155,48 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignupPage()),
-                      );
-                    },
-                    child: Text(
-                      "Don't have an account?",
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
-                    ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Confirm password",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500
                   ),
-                  TextButton(
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => WelcomeScreen()),
-                      );
-                    },
-                    child: Text(
-                      "Forgot password?",
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
+              Container(
+                margin: EdgeInsets.only(top: 5, bottom: 5),
+                width: MediaQuery.of(context).size.width,
+                height: 45,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
+                      hintText: "Confirm password",
+                      hintStyle: TextStyle(
+                          color: Colors.black.withOpacity(0.5)
+                      ),
+                      prefixIcon: Icon(
+                        Icons.key,
+                        size: 25,
+                      )
+                  ),
+
+                ),
+              ),
+              SizedBox(height: 15),
               Material(
                 color: Colors.black87,
                 borderRadius: BorderRadius.circular(10),
@@ -155,16 +205,16 @@ class LoginPage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => HomeScreen()
+                            builder: (context) => LoginPage()
                         ));
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       vertical: 10,
-                      horizontal: 112,
+                      horizontal: 100,
                     ),
                     child: Text(
-                      "Login",
+                      "Signup",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 22,
