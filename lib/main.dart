@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import './screen/welcome_screen.dart';
 
@@ -18,4 +17,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

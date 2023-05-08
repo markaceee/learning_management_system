@@ -30,11 +30,12 @@ class Courses extends StatelessWidget {
   ];
 
   List<String> SubjectImages = [
-    "images/english.jpg",
-    "images/filipino.jpg",
-    "images/math.jpg",
-    "images/science.jpg",
+    "assets/images/english.jpg",
+    "assets/images/filipino.jpg",
+    "assets/images/math.jpg",
+    "assets/images/science.jpg",
   ];
+
 
 
   @override
@@ -125,7 +126,7 @@ class Courses extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: (MediaQuery.of(context).size.height - 40 - 25) / (4 * 240),
+                    childAspectRatio: (MediaQuery.of(context).size.height - 50 - 150) / (4 * 240),
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 5,
                   ),
@@ -133,10 +134,10 @@ class Courses extends StatelessWidget {
                     return InkWell(
                       onTap: (){
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
+                          context,
+                          MaterialPageRoute(
                               builder: (context) => CourseScreen(HeaderTitle[index], SubjectImages[index])),
-                            );
+                        );
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),

@@ -57,8 +57,8 @@ class WelcomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                    topRight: Radius.circular(50)
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50)
                   )
               ),
               child: Column(

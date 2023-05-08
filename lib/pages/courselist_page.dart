@@ -55,6 +55,11 @@ class CourseListPage extends StatelessWidget {
                             'Filipino',
                             style: TextStyle(fontSize: 20),
                           ),
+                          SizedBox(height:5),
+                          LinearProgressIndicator(
+                            value:0.5,
+                            color: Colors.blue,
+                          ),
                           SizedBox(height: 5),
                           Text(
                             'Progress.. 50%',
@@ -76,6 +81,11 @@ class CourseListPage extends StatelessWidget {
                           Text(
                             'English',
                             style: TextStyle(fontSize: 20),
+                          ),
+                          SizedBox(height:5),
+                          LinearProgressIndicator(
+                            value: 0.75,
+                            color: Colors.redAccent,
                           ),
                           SizedBox(height: 5),
                           Text(
@@ -99,6 +109,11 @@ class CourseListPage extends StatelessWidget {
                             'Math',
                             style: TextStyle(fontSize: 20),
                           ),
+                          SizedBox(height:5),
+                          LinearProgressIndicator(
+                            value: 0.3,
+                            color: Colors.amber,
+                          ),
                           SizedBox(height: 5),
                           Text(
                             'Progress.. 30%',
@@ -120,6 +135,11 @@ class CourseListPage extends StatelessWidget {
                           Text(
                             'Chemistry',
                             style: TextStyle(fontSize: 20),
+                          ),
+                          SizedBox(height: 5),
+                          LinearProgressIndicator(
+                            value: 0.4,
+                            color: Colors.deepOrangeAccent,
                           ),
                           SizedBox(height: 5),
                           Text(
