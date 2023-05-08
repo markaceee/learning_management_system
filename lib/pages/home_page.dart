@@ -5,6 +5,7 @@ import 'package:learning_management_system/pages/course_page.dart';
 import 'package:learning_management_system/pages/login_page.dart';
 import 'package:learning_management_system/screen/welcome_screen.dart';
 
+
 class HomePage extends StatelessWidget {
 
   List<Color> categoryColors = [
