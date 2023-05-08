@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class CourseScreen extends StatefulWidget {
   String headerTitle;
@@ -11,19 +12,20 @@ class CourseScreen extends StatefulWidget {
 }
 
 class _CourseScreenState extends State<CourseScreen> {
-  List videoList = [
-    "Video 1",
-    "Video 2",
-    "Video 3",
-    "Video 4",
-    "Video 5",
-    "Video 6",
-    "Video 7",
-    "Video 8",
-    "Video 9",
-    "Video 10",
+  List<String> videoList = [
+    "mAvuom42NyY",
+    "bQES_F6c7c8",
+    "bQES_F6c7c8",
+    "bQES_F6c7c8",
+    "bQES_F6c7c8",
+    "mAvuom42NyY",
+    "mAvuom42NyY",
+    "mAvuom42NyY",
+    "mAvuom42NyY",
+    "mAvuom42NyY",
   ];
   bool isVideosSection = true;
+  late YoutubePlayerController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -49,18 +51,22 @@ class _CourseScreenState extends State<CourseScreen> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-
             child: ListView(
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
                   height: 200,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color(0xFFF7F6FB),
-                      image: DecorationImage(
-                          image: AssetImage(widget.subjectImage),
-                          fit: BoxFit.cover)),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFFF7F6FB),
+                    image: DecorationImage(
+                      image: AssetImage(widget.subjectImage),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
                 SizedBox(height: 10),
                 Text(
@@ -91,7 +97,6 @@ class _CourseScreenState extends State<CourseScreen> {
                   children: [
                     Material(
                       color: Colors.black87,
-                      // color: isVideosSection ? Color(0xFF674AEF) : Color(0xFF674AEF).withOpacity(0.6),
                       borderRadius: BorderRadius.circular(10),
                       child: InkWell(
                         onTap: () {
@@ -114,7 +119,6 @@ class _CourseScreenState extends State<CourseScreen> {
                     ),
                     Material(
                       color: Colors.black87,
-                      // color: isVideosSection ? Color(0xFF674AEF) : Color(0xFF674AEF).withOpacity(0.6),
                       borderRadius: BorderRadius.circular(10),
                       child: InkWell(
                         onTap: () {
@@ -123,14 +127,14 @@ class _CourseScreenState extends State<CourseScreen> {
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+                          padding:
+                          EdgeInsets.symmetric(vertical: 12, horizontal: 15),
                           child: Text(
                             "Description",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
-                                fontWeight: FontWeight.w500
-                            ),
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
@@ -147,41 +151,62 @@ class _CourseScreenState extends State<CourseScreen> {
     );
   }
 
-  Widget VideoSection(){
+  Widget VideoSection() {
     return ListView.builder(
       itemCount: videoList.length,
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemBuilder: (context, index){
+      itemBuilder: (context, index) {
+        String videoId = videoList[index];
+        YoutubePlayerController _controller = YoutubePlayerController(
+          initialVideoId: videoId,
+          flags: YoutubePlayerFlags(
+            autoPlay: false,
+            mute: false,
+          ),
+        );
+
         return Container(
           decoration: BoxDecoration(
-              color: Color(0xFFF7F6FB),
-              borderRadius: BorderRadius.circular(10)
+            color: Color(0xFFF7F6FB),
+            borderRadius: BorderRadius.circular(10),
           ),
           margin: EdgeInsets.symmetric(vertical: 3),
           child: ListTile(
             leading: Container(
               decoration: BoxDecoration(
-                color: index == 0 ? Colors.black87 : Colors.black87.withOpacity(0.6),
+                color: index == 0
+                    ? Colors.black87
+                    : Colors.black87.withOpacity(0.6),
                 shape: BoxShape.circle,
               ),
               child: Icon(
-                  Icons.play_arrow_rounded,
-                  color: Colors.white,
-                  size: 30
+                Icons.play_arrow_rounded,
+                color: Colors.white,
+                size: 30,
               ),
             ),
-            title: Text(
-                videoList[index]
-            ),
+            title: Text(videoList[index]),
             subtitle: Text("20 min 59 sec"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      YoutubePlayer(
+                        controller: _controller,
+                        showVideoProgressIndicator: true,
+                      ),
+                ),
+              );
+            },
           ),
         );
       },
     );
   }
 
-  Widget DescriptionSection(){
+  Widget DescriptionSection() {
     return Column(
       children: [
         Text(
@@ -196,29 +221,37 @@ class _CourseScreenState extends State<CourseScreen> {
         SizedBox(height: 20),
         Row(
           children: [
-            Text("Course Length", style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            )),
+            Text(
+              "Course Length",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
             Icon(
               Icons.timer,
               color: Colors.black87,
             ),
             SizedBox(width: 5),
-            Text("26 hours", style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-
-            ))
+            Text(
+              "26 hours",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
+            )
           ],
         ),
         SizedBox(height: 10),
         Row(
           children: [
-            Text("Ratings", style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            )),
+            Text(
+              "Ratings",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -245,15 +278,17 @@ class _CourseScreenState extends State<CourseScreen> {
               ],
             ),
             SizedBox(width: 5),
-            Text("4.5", style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-
-            ))
+            Text(
+              "4.5",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
+            )
           ],
-        )
+        ),
+
       ],
     );
   }
-
 }

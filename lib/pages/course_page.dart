@@ -11,10 +11,10 @@ class CoursePage extends StatelessWidget {
   ];
 
   List<String> SubjectImages = [
-    "images/english.jpg",
-    "images/filipino.jpg",
-    "images/math.jpg",
-    "images/science.jpg",
+    "assets/images/english.jpg",
+    "assets/images/filipino.jpg",
+    "assets/images/math.jpg",
+    "assets/images/science.jpg",
   ];
 
   @override
@@ -68,8 +68,8 @@ class CoursePage extends StatelessWidget {
                   Text(
                     HeaderTitle[i],
                     style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 18
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18
                     ),
                   ),
                   Row(
@@ -114,9 +114,9 @@ class CoursePage extends StatelessWidget {
                         ],
                       ),
                       Text("100,000 Students", style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w600
+                          fontSize: 10,
+                          color: Colors.black54,
+                          fontWeight: FontWeight.w600
                       ))
 
                     ],
