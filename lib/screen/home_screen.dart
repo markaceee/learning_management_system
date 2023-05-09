@@ -3,6 +3,9 @@ import 'package:learning_management_system/pages/courses.dart';
 import 'package:learning_management_system/pages/home_page.dart';
 import 'package:learning_management_system/pages/login_page.dart';
 import 'package:learning_management_system/pages/courselist_page.dart';
+import 'package:learning_management_system/pages/videonetwork.dart';
+
+
 
 
 class HomeScreen extends StatefulWidget {
@@ -19,6 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
     Courses(),
     CourseListPage(),
     LoginPage(),
+    NetworkVideoPlayer(videoUrl: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',)
+
   ];
 
   void _onItemTapped(int index) {
@@ -52,6 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
               icon: Icon(Icons.person, color: Colors.black26),
               label: 'Account',
+              backgroundColor: Colors.white),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.video_collection_sharp, color: Colors.black26),
+              label: 'Network',
               backgroundColor: Colors.white),
         ],
         currentIndex: _selectedIndex,
